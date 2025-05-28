@@ -58,6 +58,8 @@ class _LandingPageBody2State extends State<LandingPageBody2> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
+            width: 80,
+            height: 80,
             decoration: BoxDecoration(
               borderRadius: const BorderRadius.all(Radius.circular(20)),
               image: DecorationImage(
@@ -78,6 +80,7 @@ class _LandingPageBody2State extends State<LandingPageBody2> {
           ),
         ],
       ),
+      
     );
   }
 }

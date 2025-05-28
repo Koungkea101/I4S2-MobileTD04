@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:frontend_mobile/components/card_teacher.dart';
 import 'package:frontend_mobile/components/information.dart';
+import 'package:frontend_mobile/components/footer_widget.dart';
 
 class LandingPageBody4 extends StatefulWidget {
   const LandingPageBody4({Key? key}) : super(key: key);
@@ -10,7 +11,6 @@ class LandingPageBody4 extends StatefulWidget {
 }
 
 class _LandingPageBody4State extends State<LandingPageBody4> {
-
   final List<Map<String, dynamic>> newsList = [
     {
       'title':
@@ -65,6 +65,7 @@ class _LandingPageBody4State extends State<LandingPageBody4> {
       'hashtagTwo': "Technology",
     },
   ];
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -77,27 +78,39 @@ class _LandingPageBody4State extends State<LandingPageBody4> {
               const Text(
                 'Meet Our Teachers',
                 style: TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'inriaSans',
-                    color: Color(0xFF2F2F2F)),
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'inriaSans',
+                  color: Color(0xFF2F2F2F),
+                ),
               ),
               const SizedBox(height: 20),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  CardTeacher(
+                  Expanded(
+                    child: CardTeacher(
                       name: "Dr. VALY Dona",
                       image: AssetImage('assets/images/dona.jpg'),
-                      position: "Researcher, AI Specialist"),
-                  CardTeacher(
+                      position: "Researcher, AI Specialist",
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: CardTeacher(
                       name: "HOK Tin",
                       image: AssetImage('assets/images/tin.jpg'),
-                      position: "Web Developer"),
-                  CardTeacher(
+                      position: "Web Developer",
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: CardTeacher(
                       name: "HENG Rathpisey",
                       image: AssetImage('assets/images/sey.jpg'),
-                      position: "Lecturer at ITC"),
+                      position: "Lecturer at ITC",
+                    ),
+                  ),
                 ],
               ),
               const SizedBox(height: 30),
@@ -121,35 +134,33 @@ class _LandingPageBody4State extends State<LandingPageBody4> {
                   ),
                   Transform.translate(
                     offset: const Offset(
-                        -40, 0), // shift even more for tighter overlap
+                      -40,
+                      0,
+                    ), // shift even more for tighter overlap
                     child: const Icon(
                       Icons.arrow_forward_ios_rounded,
                       size: 40,
                       color: Color(0xFFFF7A00),
                     ),
                   ),
-                  Transform.translate(
-                    offset: const Offset(-40, 0),
-                    child: RichText(
-                      text: const TextSpan(
-                        text: 'To reach our only One goal,',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromARGB(255, 0, 0, 0),
-                          fontFamily: 'inriaSans',
+                  Expanded(
+                    child: Transform.translate(
+                      offset: const Offset(-40, 0),
+                      child: RichText(
+                        text: const TextSpan(
+                          text: 'To reach our only One goal,',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromARGB(255, 0, 0, 0),
+                            fontFamily: 'inriaSans',
+                          ),
+                          children: [
+                            TextSpan(text: ' \n'),
+                            WidgetSpan(child: SizedBox(height: 30)),
+                            TextSpan(text: 'what we can share with you today'),
+                          ],
                         ),
-                        children: [
-                          TextSpan(
-                            text: ' \n',
-                          ),
-                          WidgetSpan(
-                            child: SizedBox(height: 30),
-                          ),
-                          TextSpan(
-                            text: 'what we can share with you today',
-                          ),
-                        ],
                       ),
                     ),
                   ),
@@ -188,7 +199,9 @@ class _LandingPageBody4State extends State<LandingPageBody4> {
                       onPressed: () {},
                       style: TextButton.styleFrom(
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 24, vertical: 12),
+                          horizontal: 24,
+                          vertical: 12,
+                        ),
                       ),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
@@ -212,10 +225,26 @@ class _LandingPageBody4State extends State<LandingPageBody4> {
                         ],
                       ),
                     ),
-                  )
+                  ),
+                  const SizedBox(height: 40),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: SizedBox(
+                      width: 150,
+                      height: 40,
+                      child: Image.asset(
+                        'assets/logo.jpg',
+                        fit: BoxFit.contain,
+                        width: 150,
+                        height: 40, // no scaling at all
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 30),
                 ],
               ),
-              
+              // Add Footer Widget
+              FooterWidget(),
             ],
           ),
         ),

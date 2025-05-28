@@ -4,6 +4,7 @@ import 'landing_page_body.dart';
 import 'landing_page_body2.dart';
 import 'landing_page_body3.dart';
 import 'landing_page_body4.dart';
+import '../screens/_onlinescreen.dart';
 
 class CustomNavbar extends StatefulWidget {
   const CustomNavbar({super.key});
@@ -13,33 +14,29 @@ class CustomNavbar extends StatefulWidget {
 }
 
 class _CustomNavbarState extends State<CustomNavbar> {
-  static const List<Widget> _page = [
-    Center(
+  static final List<Widget> _page = [
+    const Center(
       child: Text(
         'Explore',
         style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
       ),
     ),
-    Center(
+    const Center(
       child: Text(
         'My Courses',
         style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
       ),
     ),
-    Center(
-      child: Text(
-        'Online Courses',
-        style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
-      ),
-    ),
-    Center(
+    OnlineScreen(),
+    // OnlineSearchScreen(),
+    const Center(
       child: Text(
         'Categories',
         style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
       ),
     ),
   ];
-  int _selectedIndex = 0;
+  int _selectedIndex = 2;
 
   void _onItemTapped(int index) {
     setState(() {
@@ -110,7 +107,6 @@ class _CustomNavbarState extends State<CustomNavbar> {
   Widget _buildMainContent() {
     return SingleChildScrollView(
       child: Column(
-
         children: const [
           LandingPageBody(key: Key('landing1')),
           SizedBox(height: 20), // Add some spacing between sections

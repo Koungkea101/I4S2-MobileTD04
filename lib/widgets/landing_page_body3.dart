@@ -20,8 +20,7 @@ class _LandingPageBody3State extends State<LandingPageBody3> {
     'Machine Learning',
     'Self Development',
   ];
-
-  int _selectedIndex = 0;
+  
   int _selectedCategoryIndex = 0;
 
   final Map<String, List<Widget>> _coursesByCategory = {
