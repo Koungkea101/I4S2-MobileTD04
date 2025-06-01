@@ -1,6 +1,6 @@
 {
-    "name": "frontend_mobile",
-    "short_name": "frontend_mobile",
+    "name": "tp06",
+    "short_name": "tp06",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
